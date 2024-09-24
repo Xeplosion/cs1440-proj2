@@ -130,7 +130,7 @@ Your grade depends on how your program performs when run from the command line. 
     *   The [Testing Scripts](../testing/README.md) are your friends!
 1.  **TOOL** Run through any new test cases that you devised.
 2.  **TOOL** Fill out **Phase 3** in the tool's Plan.md.
-    *   Describe the tests cases you ran.
+    *   Describe the test cases you ran.
     *   Make note of the commands that you ran and what happened in the program.
 3.  **TOOL** If you found bugs in this phase, explain what was wrong and how you fixed it.
 4.  **OVERALL** Track your time in Signature.md.
@@ -174,10 +174,10 @@ The following procedure is the best way for you to know what it will be like whe
     *   The repository's GitLab URL follows the naming convention
     *   All required files and directories are in their expected locations
     *   `.gitignore` is correct and no forbidden files or directories are present
-    *   There is at least one Git commit per tool.
+    *   There is at least one Git commit per tool
 *   Quality documentation (35 points)
     *   Each tool's Software Plan is filled out
-        *   Each section filled out with a convincing level of detail
+        *   Each section is filled out with a convincing level of detail
         *   No code is pasted from the source files
     *   Plan-overall.md is filled out
 *   Time management (5 points)
@@ -199,7 +199,7 @@ The following procedure is the best way for you to know what it will be like whe
         *   **Windows users** make sure that the capitalization of file names on GitLab match your `import` statements!
     *   No imports involve the `src.` package; this is the result of a PyCharm misconfiguration
     *   `sys.argv` is directly accessed only in `tt.py`
-        *   Relevant portions of the command line is passed into each tool function
+        *   Relevant portions of the command line are passed into each tool function
     *   `eval()` or similar functions must not be used; use `int()` to convert strings into numbers
     *   Data files are closed in ordinary situations
         *   In the event of an error, your program will display an error message and immediately exit without closing files

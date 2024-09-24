@@ -15,7 +15,7 @@
 *   If the tool's description under the examples directory doesn't have anything to say about a certain behavior (i.e. I've left it *undefined*), you have latitude in how you approach it.
     *   Mention such situations in your Software Development Plan.
 *   Don't add extra features that aren't required.
-    *   Unexpected features makes grading unnecessarily difficult.
+    *   Unexpected features make grading unnecessarily difficult.
     *   You can always revisit this project and improve it later!
 
 
@@ -113,7 +113,7 @@ $ python src/tt.py TOOL [OPTIONS] FILENAME...
 4.  Each tool must be given at least **one** (1) filename.
     *   The ellipsis means that one *or more* filenames are accepted.
 5.  When a *bad filename* is given, the program lets `open()` raise an exception (i.e. crash).
-    *   It is actually *very* difficult to correctly deal with bad file *without* crashing.
+    *   It is actually *very* difficult to correctly deal with invalid files *without* crashing.
     *   Even if you manage to avoid all possible crashes (you won't), there is nothing left for your program to do anyway; you may as well let it crash.
     *   Any error message that you could write will be less informative than what Python naturally displays; you may as well let it crash.
 6.  In all other cases of bad input, print an error message and exit *without crashing*.  These cases include:
