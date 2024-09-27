@@ -133,7 +133,7 @@ Number lines of files
 
 `nl` is like `cat`, but with line numbers added on the left side of the output.  Line numbers begin at `1` and increase for every non-blank line.  The count does not restart when a new file is encountered.
 
-    $ python sln/tt.py nl data/let3 data/num2
+    $ python src/tt.py nl data/let3 data/num2
          1  a
          2  b
          3  c
