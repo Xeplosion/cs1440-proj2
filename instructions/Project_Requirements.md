@@ -53,7 +53,7 @@ The text tools are functions that are grouped into these modules:
     *   This isn't a sly hint; 99% of students complete the project without adding extra code.
 
 
-## User Interface 
+## User Interface
 
 ### Interface Design Principles
 
@@ -135,7 +135,7 @@ $ python src/tt.py TOOL [OPTIONS] FILENAME...
 
 #### Too few arguments given to the driver
 
-When the driver is invoked without a `TOOL`, `Usage.usage()` is called with no arguments to output its full message:
+When the driver is invoked without a `TOOL`, `Usage.usage()` is called without a `tool` argument to output the full usage message:
 
     $ python src/tt.py
     Error: Too few arguments
@@ -143,6 +143,8 @@ When the driver is invoked without a `TOOL`, `Usage.usage()` is called with no a
     Python Text Tools Usage:
     ========================
     ...
+
+In this case, you should use the `error` argument to explain to the user *why* they are getting a screenful of instructions.
 
 
 #### Invalid arguments given to the driver
