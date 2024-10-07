@@ -22,28 +22,45 @@
 
 
 import sys
-
-
-print("TODO: Import necessary functions by name")  # DELETE ME
 from Usage import usage
-
-
-# Print statement debugging: display command line arguments
-# This block of code may be removed before you submit your project
-#
-# You can keep this block so long as the output goes to sys.stderr
-for i, arg in enumerate(sys.argv):
-    num = f"arg #{i})"
-    print(f"{num:<8} {arg}", file=sys.stderr)
-print(file=sys.stderr)
+from Concatenate import cat, tac, nl
+from CutPaste import cut, paste
+from Grep import grep
+from Partial import head, tail
+from Sorting import sort
+from WordCount import wc
 
 
 if len(sys.argv) < 2:
     usage()
     sys.exit(1)
 else:
-    print("TODO: Determine which tool the user has invoked by examining sys.argv")  # DELETE ME
-    print("TODO: Use if/elif/else to select which function to call")  # DELETE ME
-    print("TODO: Call the requested tool, passing remaining arguments from sys.argv")  # DELETE ME
-    print("TODO: Call usage() and exit when bad input is provided")  # DELETE ME
-    print("TODO: Did you delete all of the TODO messages?")  # DELETE ME
+    tool_name = sys.argv[1]
+    options = sys.argv[2:]
+
+    print(options)
+
+    if tool_name == "cat":
+        cat(options, usage)
+    elif tool_name == "tac":
+        tac(options, usage)
+    elif tool_name == "nl":
+        nl(options, usage)
+    elif tool_name == "cut":
+        cut(options, usage)
+    elif tool_name == "paste":
+        paste(options, usage)
+    elif tool_name == "wc":
+        paste(options, usage)
+    elif tool_name == "grep":
+        grep(options, usage)
+    elif tool_name == "head":
+        head(options, usage)
+    elif tool_name == "tail":
+        tail(options, usage)
+    elif tool_name == "sort":
+        sort(options, usage)
+    else:
+        usage(error=f"Error: {tool_name} is not a valid subcommand")
+
+    sys.exit(0)
