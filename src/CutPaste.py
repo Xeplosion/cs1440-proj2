@@ -43,8 +43,7 @@ def cut(args, usage_callback):
     for filename in args:
         processed_file = []
         with open(filename, 'r') as file:
-            for line in file:
-                processed_file.append(line.strip()) # Strip newline
+            processed_files.append([line.strip() for line in file.readlines()])
 
         processed_files.append(processed_file)
 
@@ -68,10 +67,7 @@ def cut(args, usage_callback):
         if exhausted == len(processed_files):
             break  # Exit if all files are exhausted
 
-        if out:
-            print(','.join(out))
-        else:
-            print('')
+        print(','.join(out))
 
         line += 1
 
