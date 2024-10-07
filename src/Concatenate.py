@@ -30,7 +30,7 @@ def cat(args, usage_callback):
     for filename in args:
         with open(filename, 'r') as file:
             for line in file:
-                print(line, end='')tac
+                print(line, end='')
 
 
 def tac(args, usage_callback):
