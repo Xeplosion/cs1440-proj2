@@ -19,6 +19,17 @@
 #                                 naturally sentient (or close enough).
 
 
-def sort(args):
+def sort(args, usage_callback):
     """sort lines of text files"""
-    print("TODO: sort lines of text files")
+    if len(args) < 1:
+        usage_callback(error="Error: too few arguments", tool="sort")
+
+    all_lines = []
+    for filename in args:
+        with open(filename, 'r') as file:
+            all_lines.extend(file.readlines())
+
+    sorted_lines = sorted(all_lines, key=lambda line: [ord(char) for char in line])
+
+    for line in sorted_lines:
+        print(line, end='')
