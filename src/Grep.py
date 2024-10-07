@@ -19,6 +19,35 @@
 #                                 naturally sentient (or close enough).
 
 
-def grep(args):
+def grep(args, usage_callback):
     """print lines that match patterns"""
-    print("TODO: print lines that match patterns")
+    if len(args) < 1:
+        usage_callback(error="Error: too few arguments", tool="grep")
+    search = args[0]
+    del args[0]
+
+    # Parse flags
+    v = False
+    if '-v' in args:
+        v_index = args.index('-v')
+        del args[v_index]
+
+    if len(args) > 1:
+        for filename in args:
+            with open(filename, 'r') as file:
+                lines = file.readlines()
+                for line in lines:
+                    if search in line:
+                        print(f"{filename}: {line}", end='')
+
+        return
+    elif len(args) == 1:
+        with open(args[0]) as file:
+            lines = file.readlines()
+            for line in lines:
+                if search in line:
+                    print(line, end='')
+    else:
+        usage_callback(error="Error: please provide a pattern and at least one filename", tool="grep")
+
+
