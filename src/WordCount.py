@@ -19,6 +19,32 @@
 #                                 naturally sentient (or close enough).
 
 
-def wc(files):
+def wc(files, usage_callback):
     """print newline, word, and byte counts for each file"""
-    print("TODO: print newline, word, and byte counts for each file")
+    if len(files) < 1:
+        usage_callback(error="Error: too few arguments", tool="wc")
+        return
+
+    total_lines = 0
+    total_words = 0
+    total_chars = 0
+
+    for filename in files:
+        with open(filename, 'r') as file:
+            lines = file.readlines()
+
+            num_lines = len(lines)
+            num_words = sum(len(line.split()) for line in lines)
+            num_chars = sum(len(line) for line in lines)
+
+            # Update totals
+            total_lines += num_lines
+            total_words += num_words
+            total_chars += num_chars
+
+            # Print individual file counts
+            print(f"{num_lines}\t{num_words}\t{num_chars}\t{filename}")
+
+    # Print total
+    print(f"{total_lines}\t{total_words}\t{total_chars}\t total")
+
